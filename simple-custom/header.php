@@ -19,8 +19,8 @@ if (!defined('ABSPATH')) {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <p class="site-title">
-        <a href="<?php echo esc_url(home_url('/')); ?>">
-          Amos<span>.</span>
+        <a href="<?php echo esc_url(home_url('/')); ?>"> 
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" width="40" height="40" alt="<?php bloginfo('name'); ?>">
         </a>
       </p>
       <p class="site-description"><?php bloginfo('description'); ?></p>

@@ -127,7 +127,12 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
     <div class="businesses-grid">
 
       <!-- My Party Rental Guys -->
-      <div class="business-card" id="mprg-card">
+      <div class="business-card" id="mprg-card" style="display:flex;flex-direction:column;align-items:stretch;">
+        <div class="business-logo-wrap" style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
+          <img src="<?php echo esc_url($assets_url . 'myparty.jpeg'); ?>" alt="My Party Rental Guys logo"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+
         <span class="business-label">Founder · Coachella Valley, CA</span>
         <h3 class="business-name">My Party Rental Guys</h3>
         <p class="business-tagline">"Your party, our passion."</p>
@@ -177,7 +182,11 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
       </div>
 
       <!-- TinyPest -->
-      <div class="business-card" id="tinypest-card">
+      <div class="business-card" id="tinypest-card" style="display:flex;flex-direction:column;align-items:stretch;">
+        <div class="business-logo-wrap" style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
+          <img src="<?php echo esc_url($assets_url . 'tinyPest.jpeg'); ?>" alt="TinyPest logo"
+            style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
         <span class="business-label">Founder · Termite &amp; Pest Control</span>
         <h3 class="business-name">TinyPest</h3>
         <p class="business-tagline">"Small problems. Big results."</p>
@@ -295,5 +304,15 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
     </div>
   </div>
 </section>
+
+<style>
+  /* Prevent images in the contact section from scaling */
+  .contact-section img {
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: unset !important;
+  }
+</style>
 
 <?php get_footer(); ?>
