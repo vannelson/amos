@@ -1,7 +1,13 @@
-</main>
+</main><!-- .main -->
+
 <footer class="site-footer">
-  <p>&copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; <?php echo esc_html(date('Y')); ?> Amos Greenwood Jr. All rights reserved.</p>
+    <p class="footer-name">Build. Lead. Protect.</p>
+  </div>
 </footer>
+
 <?php wp_footer(); ?>
 </body>
+
 </html>
