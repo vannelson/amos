@@ -33,6 +33,15 @@ function simple_custom_enqueue_assets()
     array('ag-fonts'),
     '2.0.0'
   );
+
+  // Scroll reveal animations
+  wp_enqueue_script(
+    'simple-custom-scroll-reveal',
+    get_template_directory_uri() . '/assets/js/scroll-reveal.js',
+    array(),
+    '1.0.0',
+    true
+  );
 }
 add_action('wp_enqueue_scripts', 'simple_custom_enqueue_assets');
 

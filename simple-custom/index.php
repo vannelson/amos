@@ -47,14 +47,14 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
     <div class="about-grid">
 
       <!-- Photo — 14.jpeg is the largest/real portrait -->
-      <div class="about-photo-wrap">
+      <div class="about-photo-wrap" data-reveal data-reveal-delay="0">
         <img src="<?php echo esc_url($assets_url . 'profile.jpeg'); ?>" alt="Amos Greenwood Jr." class="about-photo"
           loading="eager">
         <div class="about-photo-accent"></div>
       </div>
 
       <!-- Bio -->
-      <div class="about-content">
+      <div class="about-content" data-reveal data-reveal-delay="160">
         <span class="section-label">About</span>
         <h2 class="about-title">Built from the<br>ground up.</h2>
         <p class="about-bio">
@@ -82,26 +82,26 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
 <section class="pillars-section" id="pillars">
   <div class="ag-section">
 
-    <div class="pillars-header">
+    <div class="pillars-header" data-reveal data-reveal-delay="0">
       <span class="section-label">What I Stand For</span>
       <h2 class="pillars-title">Three pillars. One direction.</h2>
     </div>
 
     <div class="pillars-grid">
 
-      <div class="pillar-card">
+      <div class="pillar-card" data-reveal data-reveal-delay="120">
         
         <h3 class="pillar-word">Build</h3>
         <p class="pillar-items">Entrepreneurship<br>Execution<br>Ownership</p>
       </div>
 
-      <div class="pillar-card">
+      <div class="pillar-card" data-reveal data-reveal-delay="240">
         
         <h3 class="pillar-word">Lead</h3>
         <p class="pillar-items">Mentorship<br>Standards<br>Discipline</p>
       </div>
 
-      <div class="pillar-card">
+      <div class="pillar-card" data-reveal data-reveal-delay="360">
         
         <h3 class="pillar-word">Protect</h3>
         <p class="pillar-items">Preparedness<br>Responsibility<br>Real-world leadership</p>
@@ -119,7 +119,7 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
 <section class="businesses-section" id="businesses">
   <div class="ag-section">
 
-    <div class="businesses-header">
+    <div class="businesses-header" data-reveal data-reveal-delay="0">
       <span class="section-label">Ventures</span>
       <h2 class="pillars-title" style="text-align:left;">Founder of.</h2>
     </div>
@@ -127,7 +127,7 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
     <div class="businesses-grid">
 
       <!-- My Party Rental Guys -->
-      <div class="business-card" id="mprg-card" style="display:flex;flex-direction:column;align-items:stretch;">
+      <div class="business-card" id="mprg-card" style="display:flex;flex-direction:column;align-items:stretch;" data-reveal data-reveal-delay="120">
         <div class="business-logo-wrap" style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
           <img src="<?php echo esc_url($assets_url . 'myparty.jpeg'); ?>" alt="My Party Rental Guys logo"
             style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -182,7 +182,7 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
       </div>
 
       <!-- TinyPest -->
-      <div class="business-card" id="tinypest-card" style="display:flex;flex-direction:column;align-items:stretch;">
+      <div class="business-card" id="tinypest-card" style="display:flex;flex-direction:column;align-items:stretch;" data-reveal data-reveal-delay="240">
         <div class="business-logo-wrap" style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
           <img src="<?php echo esc_url($assets_url . 'tinyPest.jpeg'); ?>" alt="TinyPest logo"
             style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -270,7 +270,7 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
     <div class="contact-layout">
 
       <!-- Left: copy -->
-      <div class="contact-copy">
+      <div class="contact-copy" data-reveal data-reveal-delay="0">
         <span class="section-label">Contact</span>
         <h2 class="contact-title">Let's connect.</h2>
         <p class="contact-sub">
@@ -290,7 +290,7 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
       </div>
 
       <!-- Right: CF7 form -->
-      <div class="contact-form-wrap">
+      <div class="contact-form-wrap" data-reveal data-reveal-delay="160">
         <?php
         if (function_exists('wpcf7_contact_form')) {
           // Replace the ID below with your actual CF7 form ID from WP Admin → Contact → Contact Forms
