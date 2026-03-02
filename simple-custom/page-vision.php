@@ -137,6 +137,55 @@ $crest_url = $assets_url . 'Logo%20Files/JPG/Logomark_1.jpg';
             </div>
         </div>
     </section>
+    
+<!-- ═══════════════════════════════════════════════
+     7. CONTACT
+═══════════════════════════════════════════════ -->
+<section class="contact-section" id="contact">
+
+  <div class="ag-section" style="position:relative;z-index:1;">
+
+    <div class="contact-layout">
+
+      <!-- Left: copy -->
+      <div class="contact-copy" data-reveal data-reveal-delay="0">
+        <span class="section-label">Contact</span>
+        <h2 class="contact-title">Let's connect.</h2>
+        <p class="contact-sub">
+          Whether you're planning an event, looking to connect on business, or want to reach out — the door is open.
+        </p>
+        <p class="contact-sub contact-acquisition" style="margin-top:16px;">
+          For acquisition inquiries or if you are interested in selling a pest control or event services company,
+          please reach out directly via executive office contact.
+        </p>
+
+        <div class="contact-meta">
+          <p class="contact-meta-item">
+            <span class="contact-meta-label">Phone</span>
+            <a href="tel:7605373027">(760) 537-3027</a>
+          </p>
+          <p class="contact-meta-item">
+            <span class="contact-meta-label">Location</span>
+            <span>Coachella Valley, CA</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: CF7 form -->
+      <div class="contact-form-wrap" data-reveal data-reveal-delay="160">
+        <?php
+        if (function_exists('wpcf7_contact_form')) {
+          echo do_shortcode('[contact-form-7 id="1" title="Contact form 1"]');
+        } else {
+          echo '<p class="cf7-fallback">Install &amp; activate <strong>Contact Form 7</strong> plugin, then this form will appear automatically.</p>';
+        }
+        ?>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 </article>
 
