@@ -5,6 +5,8 @@ if (!defined('ABSPATH')) {
 get_header();
 
 $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
+$crest_url = $assets_url . 'Logo%20Files/JPG/Logomark_1.jpg';
+$vision_url = esc_url(home_url('/vision/'));
 ?>
 
 <!-- ═══════════════════════════════════════════════
@@ -46,7 +48,7 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
 
     <div class="about-grid">
 
-      <!-- Photo — 14.jpeg is the largest/real portrait -->
+      <!-- Photo -->
       <div class="about-photo-wrap" data-reveal data-reveal-delay="0">
         <img src="<?php echo esc_url($assets_url . 'profile.jpeg'); ?>" alt="Amos Greenwood Jr." class="about-photo"
           loading="eager">
@@ -80,6 +82,9 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
      3. PILLARS
 ═══════════════════════════════════════════════ -->
 <section class="pillars-section" id="pillars">
+  <!-- AG Crest Watermark -->
+  <img src="<?php echo esc_url($crest_url); ?>" alt="" class="ag-watermark" aria-hidden="true">
+
   <div class="ag-section">
 
     <div class="pillars-header" data-reveal data-reveal-delay="0">
@@ -90,19 +95,16 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
     <div class="pillars-grid">
 
       <div class="pillar-card" data-reveal data-reveal-delay="120">
-        
         <h3 class="pillar-word">Build</h3>
         <p class="pillar-items">Entrepreneurship<br>Execution<br>Ownership</p>
       </div>
 
       <div class="pillar-card" data-reveal data-reveal-delay="240">
-        
         <h3 class="pillar-word">Lead</h3>
         <p class="pillar-items">Mentorship<br>Standards<br>Discipline</p>
       </div>
 
       <div class="pillar-card" data-reveal data-reveal-delay="360">
-        
         <h3 class="pillar-word">Protect</h3>
         <p class="pillar-items">Preparedness<br>Responsibility<br>Real-world leadership</p>
       </div>
@@ -114,21 +116,65 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
 <hr class="ag-rule">
 
 <!-- ═══════════════════════════════════════════════
-     4. BUSINESSES
+     4. CURRENTLY BUILDING
+═══════════════════════════════════════════════ -->
+<section class="building-section" id="building">
+  <div class="ag-section">
+
+    <div class="building-header" data-reveal data-reveal-delay="0">
+      <span class="section-label">Currently Building</span>
+      <h2 class="building-title">Active. Expanding. Intentional.</h2>
+    </div>
+
+    <ul class="building-list" data-reveal data-reveal-delay="120">
+      <li class="building-item">
+        <span class="building-dot"></span>
+        <span>Launching <strong>Celebration Angels</strong> — 501(c)(3) nonprofit initiative</span>
+      </li>
+      <li class="building-item">
+        <span class="building-dot"></span>
+        <span>Scaling acquisition-focused service companies</span>
+      </li>
+      <li class="building-item">
+        <span class="building-dot"></span>
+        <span>Expanding operational footprint across Southern California</span>
+      </li>
+    </ul>
+
+    <div data-reveal data-reveal-delay="240">
+      <a href="<?php echo $vision_url; ?>" class="building-cta" id="building-vision-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" width="16" height="16">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+        View Vision
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="ag-rule">
+
+<!-- ═══════════════════════════════════════════════
+     5. OPERATING VENTURES
 ═══════════════════════════════════════════════ -->
 <section class="businesses-section" id="businesses">
   <div class="ag-section">
 
     <div class="businesses-header" data-reveal data-reveal-delay="0">
-      <span class="section-label">Ventures</span>
+      <span class="section-label">Operating Ventures</span>
       <h2 class="pillars-title" style="text-align:left;">Founder of.</h2>
     </div>
 
     <div class="businesses-grid">
 
       <!-- My Party Rental Guys -->
-      <div class="business-card" id="mprg-card" style="display:flex;flex-direction:column;align-items:stretch;" data-reveal data-reveal-delay="120">
-        <div class="business-logo-wrap" style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
+      <div class="business-card" id="mprg-card" style="display:flex;flex-direction:column;align-items:stretch;"
+        data-reveal data-reveal-delay="120">
+        <div class="business-logo-wrap"
+          style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
           <img src="<?php echo esc_url($assets_url . 'myparty.jpeg'); ?>" alt="My Party Rental Guys logo"
             style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
@@ -182,8 +228,10 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
       </div>
 
       <!-- TinyPest -->
-      <div class="business-card" id="tinypest-card" style="display:flex;flex-direction:column;align-items:stretch;" data-reveal data-reveal-delay="240">
-        <div class="business-logo-wrap" style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
+      <div class="business-card" id="tinypest-card" style="display:flex;flex-direction:column;align-items:stretch;"
+        data-reveal data-reveal-delay="240">
+        <div class="business-logo-wrap"
+          style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
           <img src="<?php echo esc_url($assets_url . 'tinyPest.jpeg'); ?>" alt="TinyPest logo"
             style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
@@ -219,7 +267,7 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
 <hr class="ag-rule">
 
 <!-- ═══════════════════════════════════════════════
-     5. SOCIAL
+     6. SOCIAL
 ═══════════════════════════════════════════════ -->
 <section class="social-section" id="social">
   <div class="ag-section">
@@ -262,10 +310,13 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
 <hr class="ag-rule">
 
 <!-- ═══════════════════════════════════════════════
-     6. CONTACT — Contact Form 7
+     7. CONTACT
 ═══════════════════════════════════════════════ -->
 <section class="contact-section" id="contact">
-  <div class="ag-section">
+  <!-- AG Crest Watermark -->
+  <img src="<?php echo esc_url($crest_url); ?>" alt="" class="ag-watermark ag-watermark--light" aria-hidden="true">
+
+  <div class="ag-section" style="position:relative;z-index:1;">
 
     <div class="contact-layout">
 
@@ -275,6 +326,10 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
         <h2 class="contact-title">Let's connect.</h2>
         <p class="contact-sub">
           Whether you're planning an event, looking to connect on business, or want to reach out — the door is open.
+        </p>
+        <p class="contact-sub contact-acquisition" style="margin-top:16px;">
+          For acquisition inquiries or if you are interested in selling a pest control or event services company,
+          please reach out directly via executive office contact.
         </p>
 
         <div class="contact-meta">
@@ -293,7 +348,6 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
       <div class="contact-form-wrap" data-reveal data-reveal-delay="160">
         <?php
         if (function_exists('wpcf7_contact_form')) {
-          // Replace the ID below with your actual CF7 form ID from WP Admin → Contact → Contact Forms
           echo do_shortcode('[contact-form-7 id="1" title="Contact form 1"]');
         } else {
           echo '<p class="cf7-fallback">Install &amp; activate <strong>Contact Form 7</strong> plugin, then this form will appear automatically.</p>';
@@ -307,11 +361,9 @@ $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
 
 <style>
   /* Prevent images in the contact section from scaling */
-  .contact-section img {
+  .contact-section img.ag-watermark {
     width: auto !important;
     max-width: none !important;
-    height: auto !important;
-    object-fit: unset !important;
   }
 </style>
 
