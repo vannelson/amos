@@ -959,21 +959,13 @@ body.nav-open .nav-backdrop {
     width: 100%;
     aspect-ratio: 4/5;
     object-fit: cover;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
     display: block;
-    filter: grayscale(15%) contrast(1.05);
+    filter: grayscale(5%);
 }
 
+/* Accent removed as per user request to avoid "boxy" look */
 .about-photo-accent {
-    position: absolute;
-    inset: -8px -8px auto auto;
-    width: 100px;
-    height: 100px;
-    border-top: 1px solid var(--gold-line);
-    border-right: 1px solid var(--gold-line);
-    border-radius: 0 4px 0 0;
-    pointer-events: none;
+    display: none;
 }
 
 .about-title {
@@ -1021,6 +1013,9 @@ body.nav-open .nav-backdrop {
 .pillars-header {
     text-align: center;
     margin-bottom: 64px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -1039,15 +1034,21 @@ body.nav-open .nav-backdrop {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 .pillar-card {
     background: linear-gradient(145deg, rgba(12, 12, 12, 0.75) 0%, rgba(18, 18, 18, 0.6) 55%, rgba(10, 10, 10, 0.78) 100%);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-    padding: 52px 40px;
+    padding: 64px 40px;
     position: relative;
     transition: background var(--transition);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pillar-card:hover {
@@ -1060,10 +1061,10 @@ body.nav-open .nav-backdrop {
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
+    height: 3px;
     background: var(--gold);
     transform: scaleX(0);
-    transform-origin: left;
+    transform-origin: center;
     transition: transform var(--transition);
 }
 
@@ -1077,24 +1078,24 @@ body.nav-open .nav-backdrop {
     letter-spacing: .24em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .pillar-word {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    letter-spacing: .06em;
+    letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--white);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .pillar-items {
-    font-size: .82rem;
-    letter-spacing: .08em;
+    font-size: .88rem;
+    letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--muted);
-    line-height: 2.2;
+    line-height: 2.4;
 }
 
 /* ─── BUSINESSES ──────────────────────────────────────────────── */
@@ -1178,17 +1179,26 @@ body.nav-open .nav-backdrop {
     stroke-linejoin: round;
 }
 
+.business-logo-wrap {
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .business-logo {
-    max-height: 48px;
-    max-width: 140px;
+    max-height: 64px;
+    max-width: 180px;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    opacity: .5;
-    transition: opacity var(--transition);
+    opacity: .7;
+    transition: opacity var(--transition), transform var(--transition);
 }
 
 .business-card:hover .business-logo {
-    opacity: .85;
+    opacity: 1;
+    transform: scale(1.02);
 }
 
 /* ─── SOCIAL ──────────────────────────────────────────────────── */
@@ -1849,14 +1859,14 @@ body.nav-open .nav-backdrop {
     pointer-events: none;
     user-select: none;
     z-index: 0;
-    /* Default: dark sections — crest is black-on-white, invert to white */
+    /* Default: dark sections — invert black PNG to white */
     filter: invert(1);
+    opacity: 0.04;
 }
 
-/* Light sections — contact section uses light bg, keep crest dark */
+/* Light sections — keep crest dark but very subtle */
 .ag-watermark--light {
-    filter: none;
-    opacity: 0.05;
+    opacity: 0.04;
 }
 
 /* Ensure sections that host a watermark have position:relative */
@@ -1874,14 +1884,9 @@ body.nav-open .nav-backdrop {
     opacity: 0.07;
 }
 
-/* Light theme: invert the watermark on dark sections so it stays visible */
-body.theme-light .ag-watermark:not(.ag-watermark--light) {
+/* Light theme: ensure watermarks are consistent */
+body.theme-light .ag-watermark {
     filter: none;
-    opacity: 0.05;
-}
-
-body.theme-light .ag-watermark--light {
-    filter: invert(1);
     opacity: 0.04;
 }
 
@@ -2059,7 +2064,7 @@ body.theme-light .site-title img {
 }
 
 .vision-block--dark {
-    background: linear-gradient(135deg, #0b0f12 0%, #14181c 48%, #0e1114 100%);
+    background: var(--bg-deep);
 }
 
 .vision-block-title {
@@ -2100,7 +2105,7 @@ body.theme-light .vision-hero {
 }
 
 body.theme-light .vision-block--dark {
-    background: linear-gradient(135deg, #edeae2 0%, #f5f2eb 48%, #ece9e1 100%);
+    background: var(--bg-deep);
 }
 
 body.theme-light .vision-block--dark .vision-block-title {
@@ -2109,4 +2114,60 @@ body.theme-light .vision-block--dark .vision-block-title {
 
 body.theme-light .vision-headline {
     color: var(--ink);
+}
+
+/* ─── HIDE TRUSTEDSITE BADGE ────────────────────────────────── */
+#trustedSiteBadge,
+.trustedsite-badge,
+.trustedsite-container,
+[id^="trustedSite"],
+div[class*="trustedsite"],
+div[id*="trustedsite"],
+iframe[src*="trustedsite"] {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* ─── EA CONTACT BLOCK ────────────────────────────────────────── */
+.ea-contact-block {
+    margin-top: 32px;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.ea-contact-title {
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.ea-contact-info {
+    font-size: .9rem;
+    color: var(--muted);
+}
+
+.ea-contact-info strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* ─── NAVIGATION FIXES ────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .site-nav {
+        pointer-events: none;
+    }
+
+    body.nav-open .site-nav {
+        pointer-events: auto;
+    }
 }

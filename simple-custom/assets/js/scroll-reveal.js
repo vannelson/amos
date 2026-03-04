@@ -4,7 +4,7 @@
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
   const backdrop = document.querySelector('[data-nav-backdrop]');
-  const navLinks = nav ? nav.querySelectorAll('a[href^="#"]') : [];
+  const navLinks = nav ? nav.querySelectorAll('a[href*="#"]') : [];
   const mobileQuery = window.matchMedia('(max-width: 860px)');
 
   const themeToggle = document.querySelector('.theme-toggle');

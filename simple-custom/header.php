@@ -54,7 +54,7 @@ $site_url = esc_url(home_url('/'));
           <ul>
             <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
             <li><a href="<?php echo esc_url(home_url('/vision/')); ?>">Vision</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="<?php echo esc_url(home_url('/#contact')); ?>">Contact</a></li>
           </ul>
         </nav>
 

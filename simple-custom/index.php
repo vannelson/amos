@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 get_header();
 
 $assets_url = get_stylesheet_directory_uri() . '/assets/images/';
-$crest_url = $assets_url . 'Logo%20Files/JPG/Logomark_1.jpg';
+$crest_url = $assets_url . 'Logo%20Files/Transparent%20Logo/PNG/Logomark_1.png';
 $vision_url = esc_url(home_url('/vision/'));
 ?>
 
@@ -52,7 +52,6 @@ $vision_url = esc_url(home_url('/vision/'));
       <div class="about-photo-wrap" data-reveal data-reveal-delay="0">
         <img src="<?php echo esc_url($assets_url . 'profile.jpeg'); ?>" alt="Amos Greenwood Jr." class="about-photo"
           loading="eager">
-        <div class="about-photo-accent"></div>
       </div>
 
       <!-- Bio -->
@@ -171,12 +170,10 @@ $vision_url = esc_url(home_url('/vision/'));
     <div class="businesses-grid">
 
       <!-- My Party Rental Guys -->
-      <div class="business-card" id="mprg-card" style="display:flex;flex-direction:column;align-items:stretch;"
-        data-reveal data-reveal-delay="120">
-        <div class="business-logo-wrap"
-          style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
+      <div class="business-card" id="mprg-card" data-reveal data-reveal-delay="120">
+        <div class="business-logo-wrap">
           <img src="<?php echo esc_url($assets_url . 'myparty.jpeg'); ?>" alt="My Party Rental Guys logo"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
+            class="business-logo">
         </div>
 
         <span class="business-label">Founder · Coachella Valley, CA</span>
@@ -187,25 +184,6 @@ $vision_url = esc_url(home_url('/vision/'));
           dance floors, AV, photo booths, mobile bartenders, and more — making events easy and unforgettable across the
           Coachella Valley.
         </p>
-
-        <div class="business-services">
-          <span class="biz-tag">Tents &amp; Canopies</span>
-          <span class="biz-tag">Tables &amp; Chairs</span>
-          <span class="biz-tag">Jumpers</span>
-          <span class="biz-tag">Lighting</span>
-          <span class="biz-tag">Dance Floors</span>
-          <span class="biz-tag">AV Rentals</span>
-          <span class="biz-tag">Photo Booths</span>
-          <span class="biz-tag">Mobile Bartenders</span>
-          <span class="biz-tag">Portable Restrooms</span>
-          <span class="biz-tag">Valet</span>
-        </div>
-
-        <div class="business-events">
-          <span class="event-type">Community Events</span>
-          <span class="event-type">Corporate Events</span>
-          <span class="event-type">Special Events</span>
-        </div>
 
         <div class="biz-meta">
           <span class="biz-meta-item">
@@ -228,12 +206,9 @@ $vision_url = esc_url(home_url('/vision/'));
       </div>
 
       <!-- TinyPest -->
-      <div class="business-card" id="tinypest-card" style="display:flex;flex-direction:column;align-items:stretch;"
-        data-reveal data-reveal-delay="240">
-        <div class="business-logo-wrap"
-          style="width:100%;aspect-ratio:3/2;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;">
-          <img src="<?php echo esc_url($assets_url . 'tinyPest.jpeg'); ?>" alt="TinyPest logo"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="business-card" id="tinypest-card" data-reveal data-reveal-delay="240">
+        <div class="business-logo-wrap">
+          <img src="<?php echo esc_url($assets_url . 'tinyPest.jpeg'); ?>" alt="TinyPest logo" class="business-logo">
         </div>
         <span class="business-label">Founder · Termite &amp; Pest Control</span>
         <h3 class="business-name">TinyPest</h3>
@@ -242,12 +217,6 @@ $vision_url = esc_url(home_url('/vision/'));
           Termite &amp; pest control protecting homes and businesses. Built on the same standards of consistency and
           accountability that drive every Greenwood venture.
         </p>
-
-        <div class="business-events">
-          <span class="event-type">Termite Control</span>
-          <span class="event-type">Pest Control</span>
-          <span class="event-type">Residential &amp; Commercial</span>
-        </div>
 
         <a href="https://www.tinypest.com/" target="_blank" rel="noopener" class="business-link"
           id="tinypest-site-link">
@@ -334,13 +303,22 @@ $vision_url = esc_url(home_url('/vision/'));
 
         <div class="contact-meta">
           <p class="contact-meta-item">
-            <span class="contact-meta-label">Phone</span>
+            <span class="contact-meta-label">Direct</span>
             <a href="tel:7605373027">(760) 537-3027</a>
           </p>
           <p class="contact-meta-item">
             <span class="contact-meta-label">Location</span>
             <span>Coachella Valley, CA</span>
           </p>
+        </div>
+
+        <!-- Executive Assistant Info -->
+        <div class="ea-contact-block">
+          <p class="ea-contact-title">Executive Assistant</p>
+          <div class="ea-contact-info">
+            <strong>Inquiries &amp; Scheduling</strong>
+            <p>office@amosgreenwood.com</p>
+          </div>
         </div>
       </div>
 
