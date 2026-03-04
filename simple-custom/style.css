@@ -341,12 +341,12 @@ body.theme-light .biz-meta-item strong {
 }
 
 body.theme-light .business-logo {
-    filter: brightness(0);
-    opacity: 0.35;
+    filter: none;
+    opacity: 1;
 }
 
 body.theme-light .business-card:hover .business-logo {
-    opacity: 0.65;
+    opacity: 1;
 }
 
 /* ── SOCIAL ───────────────────────────────────────────────────── */
@@ -530,6 +530,12 @@ a {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
+    transition: z-index var(--transition);
+}
+
+body.nav-open .site-header {
+    z-index: 200;
+    /* Above backdrop */
 }
 
 .header-inner {
@@ -1116,15 +1122,24 @@ body.nav-open .nav-backdrop {
 .business-card {
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 40px;
+    padding: 0 0 40px 0;
+    /* Padding moved to content, top is for banner */
     background: linear-gradient(145deg, rgba(12, 12, 12, 0.75) 0%, rgba(18, 18, 18, 0.6) 55%, rgba(10, 10, 10, 0.78) 100%);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    overflow: hidden;
+    /* Ensure banner doesn't spill over radius */
     transition: border-color var(--transition), background var(--transition);
     position: relative;
+}
+
+.business-card-content {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .business-card:hover {
@@ -1181,19 +1196,20 @@ body.nav-open .nav-backdrop {
 
 .business-logo-wrap {
     width: 100%;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    margin-bottom: 32px;
+    height: 280px;
+    overflow: hidden;
+    padding: 40px;
 }
 
 .business-logo {
-    max-height: 64px;
-    max-width: 180px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: .7;
-    transition: opacity var(--transition), transform var(--transition);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This makes it "Full Image" */
+    filter: none;
+    opacity: 1;
+    transition: transform var(--transition);
 }
 
 .business-card:hover .business-logo {
@@ -1326,149 +1342,7 @@ body.nav-open .nav-backdrop {
     color: var(--border);
 }
 
-/* ─── RESPONSIVE ──────────────────────────────────────────────── */
-@media (max-width: 860px) {
-    .header-inner {
-        padding: 0 16px;
-    }
-
-    .nav-toggle {
-        display: inline-flex;
-    }
-
-    .site-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: min(78vw, 320px);
-        background: #0b0f12;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 96px 24px 24px;
-        overflow-y: auto;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        z-index: 130;
-        border-left: 1px solid var(--border);
-        box-shadow: -20px 0 40px rgba(0, 0, 0, 0.35);
-    }
-
-    body.nav-open .site-nav {
-        transform: translateX(0);
-    }
-
-    .site-nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .site-nav a {
-        font-size: 1rem;
-        letter-spacing: .18em;
-        color: var(--ink);
-    }
-
-    .nav-actions {
-        gap: 10px;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-
-    .about-photo-wrap {
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .pillars-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .businesses-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 640px) {
-    .ag-section {
-        padding: 72px 20px;
-    }
-
-    .header-inner {
-        height: 60px;
-    }
-
-    .main {
-        padding-top: 60px;
-    }
-
-    .site-nav {
-        width: min(86vw, 320px);
-        padding-top: 88px;
-    }
-
-    .theme-toggle,
-    .nav-toggle {
-        width: 38px;
-        height: 38px;
-    }
-
-    .hero-tagline {
-        margin-bottom: 20px;
-    }
-
-    .hero-divider {
-        margin-bottom: 20px;
-    }
-
-    .hero-roles {
-        letter-spacing: .12em;
-        margin-bottom: 36px;
-        line-height: 1.6;
-    }
-
-    .hero-cta {
-        width: 100%;
-        justify-content: center;
-    }
-
-
-    .pillar-card {
-        padding: 40px 28px;
-    }
-
-    .business-card {
-        padding: 32px 24px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .social-link {
-        justify-content: center;
-    }
-
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-
-    .contact-form-wrap {
-        padding: 28px;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
+/* Responsive Section Moved to end of file for priority */
 
 /* ─── BUSINESS CARD ENHANCEMENTS ────────────────────────────── */
 .business-tagline {
@@ -1617,12 +1491,7 @@ body.nav-open .nav-backdrop {
     transform: scale(1.04);
 }
 
-@media (max-width: 640px) {
-    .gallery-item {
-        width: 240px;
-        height: 180px;
-    }
-}
+
 
 /* ─── CONTACT LAYOUT ─────────────────────────────────────────── */
 .contact-layout {
@@ -1630,6 +1499,21 @@ body.nav-open .nav-backdrop {
     grid-template-columns: 360px 1fr;
     gap: 72px;
     align-items: start;
+}
+
+.contact-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -.02em;
+    margin-bottom: 24px;
+}
+
+.contact-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 480px;
 }
 
 .contact-info-list {
@@ -2161,13 +2045,189 @@ iframe[src*="trustedsite"] {
     margin-bottom: 4px;
 }
 
-/* ─── NAVIGATION FIXES ────────────────────────────────────────── */
+
+/* ─── RESPONSIVE OVERRIDES (Consolidated at end for priority) ─── */
+
 @media (max-width: 860px) {
+    .header-inner {
+        padding: 0 16px;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
     .site-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(78vw, 320px);
+        background: #0b0f12;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 96px 24px 24px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0.4s;
+        z-index: 130;
+        border-left: 1px solid var(--border);
+        box-shadow: -20px 0 40px rgba(0, 0, 0, 0.35);
         pointer-events: none;
+        visibility: hidden;
     }
 
     body.nav-open .site-nav {
+        transform: translateX(0);
         pointer-events: auto;
+        visibility: visible;
+    }
+
+    .site-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .site-nav a {
+        font-size: 1rem;
+        letter-spacing: .18em;
+        color: var(--ink);
+    }
+
+    .nav-actions {
+        gap: 10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-photo-wrap {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .businesses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+@media (max-width: 640px) {
+    .ag-section {
+        padding: 72px 20px;
+    }
+
+    .header-inner {
+        height: 60px;
+    }
+
+    .main {
+        padding-top: 60px;
+    }
+
+    .site-nav {
+        width: min(86vw, 320px);
+        padding-top: 88px;
+    }
+
+    .theme-toggle,
+    .nav-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero-tagline {
+        margin-bottom: 20px;
+    }
+
+    .hero-divider {
+        margin-bottom: 20px;
+    }
+
+    .hero-roles {
+        letter-spacing: .12em;
+        margin-bottom: 36px;
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pillar-card {
+        padding: 40px 28px;
+    }
+
+    .business-card {
+        padding: 0 0 32px 0;
+    }
+
+    .business-card-content {
+        padding: 0 24px;
+    }
+
+    .business-logo-wrap {
+        height: 180px;
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-link {
+        justify-content: center;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .contact-form-wrap {
+        padding: 20px;
+    }
+
+    .contact-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-sub {
+        font-size: .95rem;
+    }
+
+    .ea-contact-block {
+        padding: 20px;
+        margin-top: 24px;
+    }
+
+    .wpcf7 input[type="submit"] {
+        width: 100%;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gallery-item {
+        width: 240px;
+        height: 180px;
     }
 }

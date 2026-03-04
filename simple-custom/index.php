@@ -169,40 +169,43 @@ $vision_url = esc_url(home_url('/vision/'));
 
     <div class="businesses-grid">
 
-      <!-- My Party Rental Guys -->
       <div class="business-card" id="mprg-card" data-reveal data-reveal-delay="120">
         <div class="business-logo-wrap">
           <img src="<?php echo esc_url($assets_url . 'myparty.jpeg'); ?>" alt="My Party Rental Guys logo"
             class="business-logo">
         </div>
 
-        <span class="business-label">Founder · Coachella Valley, CA</span>
-        <h3 class="business-name">My Party Rental Guys</h3>
-        <p class="business-tagline">"Your party, our passion."</p>
-        <p class="business-desc">
-          Premier event rental company serving the Greater Palm Springs area. Tents, tables, chairs, jumpers, lighting,
-          dance floors, AV, photo booths, mobile bartenders, and more — making events easy and unforgettable across the
-          Coachella Valley.
-        </p>
+        <div class="business-card-content">
+          <span class="business-label">Founder · Coachella Valley, CA</span>
+          <h3 class="business-name">My Party Rental Guys</h3>
+          <p class="business-tagline">"Your party, our passion."</p>
+          <p class="business-desc">
+            Premier event rental company serving the Greater Palm Springs area. Tents, tables, chairs, jumpers,
+            lighting,
+            dance floors, AV, photo booths, mobile bartenders, and more — making events easy and unforgettable across
+            the
+            Coachella Valley.
+          </p>
 
-        <div class="biz-meta">
-          <span class="biz-meta-item">
-            <strong>Locations:</strong> Cathedral City &amp; Indio, CA
-          </span>
-          <span class="biz-meta-item">
-            <strong>Phone:</strong> <a href="tel:7605373027">(760) 537-3027</a>
-          </span>
+          <div class="biz-meta">
+            <span class="biz-meta-item">
+              <strong>Locations:</strong> Cathedral City &amp; Indio, CA
+            </span>
+            <span class="biz-meta-item">
+              <strong>Phone:</strong> <a href="tel:7605373027">(760) 537-3027</a>
+            </span>
+          </div>
+
+          <a href="https://mypartyrentalguys.com/" target="_blank" rel="noopener" class="business-link"
+            id="mprg-site-link">
+            Visit site
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
         </div>
-
-        <a href="https://mypartyrentalguys.com/" target="_blank" rel="noopener" class="business-link"
-          id="mprg-site-link">
-          Visit site
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </a>
       </div>
 
       <!-- TinyPest -->
@@ -210,23 +213,25 @@ $vision_url = esc_url(home_url('/vision/'));
         <div class="business-logo-wrap">
           <img src="<?php echo esc_url($assets_url . 'tinyPest.jpeg'); ?>" alt="TinyPest logo" class="business-logo">
         </div>
-        <span class="business-label">Founder · Termite &amp; Pest Control</span>
-        <h3 class="business-name">TinyPest</h3>
-        <p class="business-tagline">"Small problems. Big results."</p>
-        <p class="business-desc">
-          Termite &amp; pest control protecting homes and businesses. Built on the same standards of consistency and
-          accountability that drive every Greenwood venture.
-        </p>
+        <div class="business-card-content">
+          <span class="business-label">Founder · Termite &amp; Pest Control</span>
+          <h3 class="business-name">TinyPest</h3>
+          <p class="business-tagline">"Small problems. Big results."</p>
+          <p class="business-desc">
+            Termite &amp; pest control protecting homes and businesses. Built on the same standards of consistency and
+            accountability that drive every Greenwood venture.
+          </p>
 
-        <a href="https://www.tinypest.com/" target="_blank" rel="noopener" class="business-link"
-          id="tinypest-site-link">
-          Visit site
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </a>
+          <a href="https://www.tinypest.com/" target="_blank" rel="noopener" class="business-link"
+            id="tinypest-site-link">
+            Visit site
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -336,13 +341,5 @@ $vision_url = esc_url(home_url('/vision/'));
     </div>
   </div>
 </section>
-
-<style>
-  /* Prevent images in the contact section from scaling */
-  .contact-section img.ag-watermark {
-    width: auto !important;
-    max-width: none !important;
-  }
-</style>
 
 <?php get_footer(); ?>
