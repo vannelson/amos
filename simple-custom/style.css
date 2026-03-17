@@ -2200,25 +2200,46 @@ iframe[src*="trustedsite"] {
     }
 
     .contact-form-wrap {
-        padding: 20px;
+        padding: 24px 20px;
     }
 
     .contact-title {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
+        font-size: 2rem;
+        margin-bottom: 16px;
     }
 
     .contact-sub {
         font-size: .95rem;
+        word-break: break-word;
+    }
+
+    .contact-meta {
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+
+    .contact-meta-item a,
+    .contact-meta-item span {
+        word-break: break-all;
     }
 
     .ea-contact-block {
         padding: 20px;
         margin-top: 24px;
+        word-break: break-word;
+    }
+
+    .wpcf7 input,
+    .wpcf7 textarea,
+    .wpcf7 select {
+        font-size: 1rem; /* >=16px prevents iOS zoom issue */
+        margin-bottom: 16px;
     }
 
     .wpcf7 input[type="submit"] {
         width: 100%;
+        padding: 16px 20px;
+        margin-top: 8px;
     }
 
     .footer-inner {
