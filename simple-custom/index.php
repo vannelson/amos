@@ -50,7 +50,7 @@ $vision_url = esc_url(home_url('/vision/'));
 
       <!-- Photo -->
       <div class="about-photo-wrap" data-reveal data-reveal-delay="0">
-        <img src="<?php echo esc_url($assets_url . 'profile.jpeg'); ?>" alt="Amos Greenwood Jr." class="about-photo"
+        <img src="<?php echo esc_url($assets_url . 'profile.jpg'); ?>" alt="Amos Greenwood Jr." class="about-photo"
           loading="eager">
       </div>
 
